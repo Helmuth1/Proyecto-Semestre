@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="458.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="247.0" layoutY="41.0" text="Solicitud de Ticket">
          <font>
@@ -39,10 +39,16 @@
       <TextField layoutX="254.0" layoutY="237.0" />
       <ComboBox layoutX="252.0" layoutY="281.0" prefHeight="28.0" prefWidth="151.0" />
       <TextArea layoutX="253.0" layoutY="138.0" prefHeight="90.0" prefWidth="150.0" />
-      <Button layoutX="504.0" layoutY="345.0" mnemonicParsing="false" text="Regresar">
+      <Button layoutX="502.0" layoutY="397.0" mnemonicParsing="false" text="Regresar">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <Label layoutX="179.0" layoutY="341.0" text="Adjuntos:">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="253.0" layoutY="336.0" />
    </children>
 </AnchorPane>
