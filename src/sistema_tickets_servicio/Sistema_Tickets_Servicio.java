@@ -19,7 +19,7 @@ import javafx.stage.Stage;
  */
 public class Sistema_Tickets_Servicio extends Application {
 
-    @Override
+    
     public void start(Stage PantallaPrincipal) throws IOException {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/CrearCuenta.fxml"));
             Parent root = loader.load();
@@ -34,6 +34,13 @@ public class Sistema_Tickets_Servicio extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Administrador a1 = new Administrador("Juan", "heasd@gmail.com", "asd1", "123123123") {
+            @Override
+            public void mostrarDatos() {
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+        };
+        
         launch(args);
     }
     
