@@ -9,21 +9,34 @@ package sistema_tickets_servicio;
  * @author helmu
  */
 public abstract class Administrador extends Persona {
-     private String identificacion;
-     
-     public Administrador(String nombre, String correo, String contrasena, String identificacion){
+     private String id_admin;
+          
+     public Administrador(String nombre, String correo, String contrasena, String id_admin){
          super(nombre, correo, contrasena);
-         this.identificacion = identificacion;
+         this.id_admin = id_admin;
      }
 
-    public String getIdentificacion() {
-        return identificacion;
+    public String getId_admin() {
+        return id_admin;
     }
 
-    public void setIdentificacion(String identificacion) {
-        this.identificacion = identificacion;
+    public void setId_admin(String id_admin) {
+        this.id_admin = id_admin;
     }
      
     @Override
     public abstract void mostrarDatos();
+    
+    public void gestionarUsuarios(){
+    
+    }
+    
+    public void asignarRoles(){
+//    
+    }
+    
+    public void gestionarDepartamentos(){
+    
+    }
+    
 }

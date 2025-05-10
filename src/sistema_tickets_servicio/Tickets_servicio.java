@@ -8,10 +8,6 @@ package sistema_tickets_servicio;
  *
  * @author helmu
  */
-public abstract class EstadoTicket extends Ticket {
+public class Tickets_servicio {
     
-    public EstadoTicket(int id, String descripcion, boolean estadoTicket, String notas){
-    super(id, descripcion, estadoTicket, notas);
-    }
-     
 }

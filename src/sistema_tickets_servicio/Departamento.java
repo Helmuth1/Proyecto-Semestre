@@ -16,7 +16,6 @@ public class Departamento {
     
     public Departamento(){
     this.cantidadTecnicos = 0;
-    this.Tecnico = new Tecnico[Tecnico.getCarne()];
     }
 
     public Departamento(String nombreDepartamento, String descripcion, Tecnico[] Tecnico, int cantidadTecnicos) {
@@ -25,7 +24,7 @@ public class Departamento {
         this.Tecnico = Tecnico;
         this.cantidadTecnicos = cantidadTecnicos;
     }
-
+            
     public String getNombreDepartamento() {
         return nombreDepartamento;
     }

@@ -8,6 +8,12 @@ package sistema_tickets_servicio;
  *
  * @author helmu
  */
-public class FlujoTrabajo {
+public abstract class FlujoTrabajo extends Ticket {
+    private boolean estado;
+    
+    public FlujoTrabajo(int id, String descripcion, boolean estadoTicket, String notas, boolean estado){
+    super(id, descripcion, estadoTicket, notas);
+    this.estado = estado;
+    }
     
 }
