@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"fx:controller="vista.loginControlador">
+<AnchorPane id="AnchorPane" prefHeight="443.0" prefWidth="624.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.crearCuentaControlador">
    <children>
-      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="422.0" prefWidth="600.0" style="-fx-background-color: #FFFF;">
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="422.0" prefWidth="600.0" style="-fx-background-color: pink;">
          <children>
-            <TextField layoutX="191.0" layoutY="91.0" prefHeight="26.0" prefWidth="235.0" />
+            <TextField fx:id="txtNombre" layoutX="195.0" layoutY="94.0" prefHeight="26.0" prefWidth="235.0" />
             <Label layoutX="242.0" layoutY="39.0" prefHeight="18.0" prefWidth="114.0" text="Crear Cuenta " textAlignment="CENTER">
                <font>
                   <Font name="Britannic Bold" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="248.0" layoutY="335.0" mnemonicParsing="false" text="Crear Cuenta">
+            <Button fx:id="btnCrearCuenta" layoutX="247.0" layoutY="335.0" mnemonicParsing="false" onAction="#crearCuenta" text="Crear Cuenta">
                <font>
                   <Font name="Broadway" size="12.0" />
                </font>
             </Button>
-            <Label layoutX="128.0" layoutY="97.0" text="Nombre:">
+            <Label layoutX="132.0" layoutY="100.0" text="Nombre:">
                <font>
                   <Font name="Broadway" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="59.0" layoutY="136.0" text="Correo Electronico:">
+            <Label layoutX="63.0" layoutY="139.0" text="Correo Electronico:">
                <font>
                   <Font name="Broadway" size="12.0" />
                </font>
@@ -37,36 +37,30 @@
                   <Font name="Broadway" size="12.0" />
                </font>
             </Label>
-            <PasswordField layoutX="191.0" layoutY="130.0" prefHeight="26.0" prefWidth="235.0" />
-            <Label layoutX="129.0" layoutY="180.0" text="Usuario:">
+            <Label layoutX="133.0" layoutY="183.0" text="Usuario:">
                <font>
                   <Font name="Broadway" size="12.0" />
                </font>
             </Label>
-            <PasswordField layoutX="191.0" layoutY="174.0" prefHeight="26.0" prefWidth="235.0" />
-            <Label layoutX="105.0" layoutY="217.0" text="Contraseña:">
+            <Label layoutX="109.0" layoutY="220.0" text="Contraseña:">
                <font>
                   <Font name="Broadway" size="12.0" />
                </font>
             </Label>
-            <PasswordField layoutX="191.0" layoutY="211.0" prefHeight="26.0" prefWidth="235.0" />
-            <Label layoutX="157.0" layoutY="251.0" text="Rol:">
-               <font>
-                  <Font name="Broadway" size="12.0" />
-               </font>
-            </Label>
-            <PasswordField layoutX="191.0" layoutY="245.0" prefHeight="26.0" prefWidth="235.0" />
-            <Label layoutX="85.0" layoutY="287.0" text="Departamento:">
-               <font>
-                  <Font name="Broadway" size="12.0" />
-               </font>
-            </Label>
-            <PasswordField layoutX="191.0" layoutY="281.0" prefHeight="26.0" prefWidth="235.0" />
-            <Button layoutX="502.0" layoutY="370.0" mnemonicParsing="false" text="Regresar">
+            <Button fx:id="btnRegresar" layoutX="502.0" layoutY="370.0" mnemonicParsing="false" onAction="#mostrarLogin" text="Regresar">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
+            <TextField fx:id="txtCorreo" layoutX="196.0" layoutY="134.0" prefHeight="26.0" prefWidth="235.0" />
+            <TextField fx:id="txtUsuario" layoutX="196.0" layoutY="177.0" prefHeight="26.0" prefWidth="235.0" />
+            <TextField fx:id="txtContrasena" layoutX="195.0" layoutY="214.0" prefHeight="26.0" prefWidth="235.0" />
+            <Label layoutX="161.0" layoutY="258.0" text="Rol:">
+               <font>
+                  <Font name="Broadway" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="196.0" layoutY="252.0" onAction="#comboRol" prefHeight="26.0" prefWidth="235.0" />
          </children>
       </AnchorPane>
    </children>

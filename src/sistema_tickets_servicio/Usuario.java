@@ -9,19 +9,19 @@ package sistema_tickets_servicio;
  * @author helmu
  */
 public abstract class Usuario extends Persona {
-    private String usuario;
+    private String nombreusuario;
     
-    public Usuario(String nombre, String correo, String contrasena, String Usuario){
-         super(nombre, correo, contrasena);
-         this.usuario = usuario;
+    public Usuario(int id, String nombrecompleto, String correoelectronico, String contrasena, String nombreusuario){
+         super(id, nombrecompleto, correoelectronico, contrasena);
+         this.nombreusuario = nombreusuario;
      }
 
-    public String getUsuario() {
-        return usuario;
+    public String getnombreusuario() {
+        return nombreusuario;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setnombreusuario(String nombreusuario) {
+        this.nombreusuario = nombreusuario;
     }
     
     public void crearTicket(){

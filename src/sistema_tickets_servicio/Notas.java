@@ -10,12 +10,11 @@ import java.util.Date;
  *
  * @author helmu
  */
-public abstract class Notas extends Ticket {
+public abstract class Notas {
     private String contenido;
     private Date fecha;
 
-    public Notas(int id, String descripcion, boolean estadoTicket, String notas, String contenido, Date fecha){
-        super(id, descripcion, estadoTicket, notas);
+    public Notas( String contenido, Date fecha){
         this.contenido = contenido;
         this.fecha = fecha;
     }

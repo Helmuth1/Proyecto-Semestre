@@ -3,15 +3,41 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.menuAdminControlador">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" text="Administrador" />
-      <Button layoutX="274.0" layoutY="106.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="506.0" layoutY="344.0" mnemonicParsing="false" text="Regresar" />
-      <Button layoutX="274.0" layoutY="200.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="274.0" layoutY="154.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="274.0" layoutY="255.0" mnemonicParsing="false" text="Button" />
+      <Label layoutX="14.0" layoutY="14.0" text="Administrador">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="btnRoles" layoutX="216.0" layoutY="57.0" mnemonicParsing="false" onAction="#registrarUsuarios" text="Registro Usuarios">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnRegresar" layoutX="491.0" layoutY="350.0" mnemonicParsing="false" onAction="#mostrarInicio" text="Regresar">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnLista" layoutX="194.0" layoutY="276.0" mnemonicParsing="false" onAction="#mostrarLista" text="Lista tickets pendientes">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnRegistrar" layoutX="189.0" layoutY="103.0" mnemonicParsing="false" onAction="#mostrarRegistrar" text="Registrar Departamentos">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnDefinir" layoutX="193.0" layoutY="189.0" mnemonicParsing="false" onAction="#mostrarEstado" text="Definir estado de tickets">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnAgregar" layoutX="203.0" layoutY="233.0" mnemonicParsing="false" onAction="#mostrarNota" text="Agregar nota a ticket">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnCrear" layoutX="231.0" layoutY="146.0" mnemonicParsing="false" onAction="#crearTicket" text="Crear Ticket">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>

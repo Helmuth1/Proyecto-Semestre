@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="398.0" prefWidth="518.0" spacing="10" style="-fx-padding: 20; -fx-background-color: pink;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.AgregarNotaControlador">
+
+    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Agregar Nota al Ticket">
+      <font>
+         <Font name="Broadway" size="12.0" />
+      </font></Label>
+
+    <HBox spacing="10">
+        <Label text="ID Ticket:">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Label>
+        <TextField fx:id="txtIdTicket" promptText="Número de ticket" />
+    </HBox>
+
+    <VBox spacing="5">
+        <Label text="Contenido de la Nota:">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Label>
+        <TextArea fx:id="txtContenidoNota" prefRowCount="6" prefWidth="478.0" promptText="Escribe la nota aquí..." wrapText="true" />
+    </VBox>
+
+    <HBox prefHeight="52.0" prefWidth="478.0" spacing="10">
+        <Label text="Adjunto:">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Label>
+        <TextField fx:id="txtAdjuntoRuta" editable="false" promptText="Ruta del archivo" />
+        <Button onAction="#seleccionarAdjunto" text="Seleccionar">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Button>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="20">
+        <Button onAction="#guardarNota" text="Guardar Nota">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Button>
+        <Button onAction="#limpiar" text="Limpiar Campos">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Button>
+    </HBox>
+   <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#regresarMenu" text="Regresar">
+      <font>
+         <Font name="Broadway" size="12.0" />
+      </font>
+   </Button>
+
+    <Label fx:id="lblMensaje" style="-fx-text-fill: red;" />
+</VBox>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="417.0" prefWidth="800.0" spacing="20.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.CreacionTicketControlador">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label styleClass="title-label" text="Crear Ticket">
+      <font>
+         <Font name="Broadway" size="20.0" />
+      </font></Label>
+
+    <GridPane hgap="10.0" vgap="15.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="265.6000122070312" minWidth="10.0" prefWidth="183.99999084472654" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="606.4000091552734" minWidth="10.0" prefWidth="606.4000091552734" />
+        </columnConstraints>
+
+        <Label text="Título:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Label>
+        <TextField fx:id="txtTitulo" prefHeight="26.0" prefWidth="527.0" promptText="Breve descripción del problema" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Descripción:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Label>
+        <TextArea fx:id="txtDescripcion" prefHeight="100.0" prefWidth="544.0" promptText="Detalle de la solicitud o incidencia" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Departamento Asignado:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Label>
+        <ComboBox fx:id="cmbDepartamento" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Nivel de Prioridad:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Label>
+        <ComboBox fx:id="cmbPrioridad" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label text="Adjuntos (Opcional):" GridPane.columnIndex="0" GridPane.rowIndex="4">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Label>
+        <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <Button fx:id="btnSeleccionarAdjunto" onAction="#seleccionarAdjunto" text="Seleccionar Archivo">
+               <font>
+                  <Font name="Broadway" size="12.0" />
+               </font></Button>
+                <Label fx:id="lblNombreAdjunto" text="Ningún archivo seleccionado" />
+            </HBox>
+            <Label style="-fx-font-size: 10px; -fx-text-fill: #777;" text="Tamaño máximo 5MB por archivo." />
+            <Label style="-fx-font-size: 10px; -fx-text-fill: #777;" text="Formatos permitidos: PDF, JPG, PNG, DOCX, XLSX." />
+        </VBox>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+
+    </GridPane>
+
+    <HBox alignment="CENTER" spacing="20.0">
+        <Button fx:id="btnCrearTicket" onAction="#crearTicket" text="Crear Ticket">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font></Button>
+        <Button fx:id="btnCancelar" onAction="#cancelarCreacion" text="Cancelar">
+         <font>
+            <Font name="Broadway" size="12.0" />
+         </font>
+      </Button>
+    </HBox>
+   <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#regresarMenu" text="Regresar">
+      <font>
+         <Font name="Broadway" size="12.0" />
+      </font>
+   </Button>
+
+    <Label fx:id="lblMensajeEstado" styleClass="status-label" />
+
+</VBox>

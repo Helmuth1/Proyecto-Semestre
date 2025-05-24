@@ -4,21 +4,54 @@
  */
 package sistema_tickets_servicio;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author helmu
  */
 public abstract class Ticket {
-    private int id;
-    private String descripcion;
-    private boolean estadoTicket;
-    private String notas;
     
-    public Ticket(int id, String descripcion, boolean estadoTicket, String notas){
+    private int id;
+    private String titulo;
+    private String descripcion;
+    private int departamentoAsignadoId; 
+    private String prioridad;
+    private String adjuntosRuta; 
+    private String estado;
+    private LocalDateTime fechaCreacion;
+    private int creadoPorUsuarioId;
+    private Integer asignadoATecnicoId; 
+    private LocalDateTime fechaUltimaActualizacion;
+
+    
+    public Ticket(int id, String titulo, String descripcion, int departamentoAsignadoId, String prioridad, String adjuntosRuta, String estado, LocalDateTime fechaCreacion, int creadoPorUsuarioId,
+                  Integer asignadoATecnicoId, LocalDateTime fechaUltimaActualizacion) {
         this.id = id;
+        this.titulo = titulo;
         this.descripcion = descripcion;
-        this.estadoTicket = estadoTicket;
-        this.notas = notas;
+        this.departamentoAsignadoId = departamentoAsignadoId;
+        this.prioridad = prioridad;
+        this.adjuntosRuta = adjuntosRuta;
+        this.estado = estado;
+        this.fechaCreacion = fechaCreacion;
+        this.creadoPorUsuarioId = creadoPorUsuarioId;
+        this.asignadoATecnicoId = asignadoATecnicoId;
+        this.fechaUltimaActualizacion = fechaUltimaActualizacion;
+    }
+
+    // Constructor para la creacion tickets
+    public Ticket(String titulo, String descripcion, int departamentoAsignadoId,
+                  String prioridad, String adjuntosRuta, int creadoPorUsuarioId) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.departamentoAsignadoId = departamentoAsignadoId;
+        this.prioridad = prioridad;
+        this.adjuntosRuta = adjuntosRuta;
+        this.creadoPorUsuarioId = creadoPorUsuarioId;
+        this.estado = "Pendiente";
+        this.fechaCreacion = LocalDateTime.now(); 
+        this.fechaUltimaActualizacion = LocalDateTime.now();
     }
 
     public int getId() {
@@ -29,6 +62,14 @@ public abstract class Ticket {
         this.id = id;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -37,26 +78,70 @@ public abstract class Ticket {
         this.descripcion = descripcion;
     }
 
-    public boolean isEstadoTicket() {
-        return estadoTicket;
+    public int getDepartamentoAsignadoId() {
+        return departamentoAsignadoId;
     }
 
-    public void setEstadoTicket(boolean estadoTicket) {
-        this.estadoTicket = estadoTicket;
+    public void setDepartamentoAsignadoId(int departamentoAsignadoId) {
+        this.departamentoAsignadoId = departamentoAsignadoId;
     }
 
-    public String getNotas() {
-        return notas;
+    public String getPrioridad() {
+        return prioridad;
     }
 
-    public void setNotas(String notas) {
-        this.notas = notas;
+    public void setPrioridad(String prioridad) {
+        this.prioridad = prioridad;
     }
-    
-    public void cambiarEstado(){
+
+    public String getAdjuntosRuta() {
+        return adjuntosRuta;
     }
-    
-    public void agregarNota(){
+
+    public void setAdjuntosRuta(String adjuntosRuta) {
+        this.adjuntosRuta = adjuntosRuta;
     }
-    
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public int getCreadoPorUsuarioId() {
+        return creadoPorUsuarioId;
+    }
+
+    public void setCreadoPorUsuarioId(int creadoPorUsuarioId) {
+        this.creadoPorUsuarioId = creadoPorUsuarioId;
+    }
+
+    public Integer getAsignadoATecnicoId() {
+        return asignadoATecnicoId;
+    }
+
+    public void setAsignadoATecnicoId(Integer asignadoATecnicoId) {
+        this.asignadoATecnicoId = asignadoATecnicoId;
+    }
+
+    public LocalDateTime getFechaUltimaActualizacion() {
+        return fechaUltimaActualizacion;
+    }
+
+    public void setFechaUltimaActualizacion(LocalDateTime fechaUltimaActualizacion) {
+        this.fechaUltimaActualizacion = fechaUltimaActualizacion;
+    }
+
+
 }
+

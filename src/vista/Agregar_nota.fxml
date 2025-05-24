@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.AgregarNotaControlador">
    <children>
       <Label layoutX="207.0" layoutY="36.0" text="Agregar Nota a Ticket">
          <font>
@@ -21,6 +20,6 @@
       <TextField layoutX="257.0" layoutY="114.0" />
       <TextArea layoutX="257.0" layoutY="153.0" prefHeight="78.0" prefWidth="150.0" />
       <TextField layoutX="258.0" layoutY="237.0" />
-      <Button layoutX="492.0" layoutY="337.0" mnemonicParsing="false" text="Regresar" />
+      <Button fx:id="btnRegresar" layoutX="492.0" layoutY="337.0" mnemonicParsing="false" onAction="#mostrarMenu" text="Regresar" />
    </children>
 </AnchorPane>

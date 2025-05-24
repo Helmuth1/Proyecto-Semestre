@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.FlujosTrabajoControlador">
    <children>
       <Label layoutX="161.0" layoutY="33.0" text="Configuracion Flujos de Trabajo">
          <font>
@@ -20,6 +19,6 @@
       <TextField layoutX="275.0" layoutY="112.0" />
       <TextField layoutX="276.0" layoutY="152.0" />
       <TextField layoutX="277.0" layoutY="193.0" />
-      <Button layoutX="489.0" layoutY="330.0" mnemonicParsing="false" text="Regresar" />
+      <Button fx:id="btnRegresar" layoutX="489.0" layoutY="330.0" mnemonicParsing="false" onAction="#mostrarMenu" text="Regresar" />
    </children>
 </AnchorPane>

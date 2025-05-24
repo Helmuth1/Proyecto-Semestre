@@ -4,53 +4,75 @@
  */
 package sistema_tickets_servicio;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 /**
  *
  * @author helmu
  */
 public class Departamento {
-    private String nombreDepartamento;
-    private String descripcion;
-    private Tecnico [] Tecnico;
-    private int cantidadTecnicos;
     
-    public Departamento(){
-    this.cantidadTecnicos = 0;
+    private final SimpleIntegerProperty id;
+    private final SimpleStringProperty nombre;
+    private final SimpleStringProperty descripcion;
+    private final ObservableList<String> tecnicosAsignados;
+
+    public Departamento(int id, String nombre, String descripcion, ObservableList<String> tecnicosAsignados) {
+        this.id = new SimpleIntegerProperty(id);
+        this.nombre = new SimpleStringProperty(nombre);
+        this.descripcion = new SimpleStringProperty(descripcion);
+        this.tecnicosAsignados = tecnicosAsignados != null ? tecnicosAsignados : FXCollections.observableArrayList();
     }
 
-    public Departamento(String nombreDepartamento, String descripcion, Tecnico[] Tecnico, int cantidadTecnicos) {
-        this.nombreDepartamento = nombreDepartamento;
-        this.descripcion = descripcion;
-        this.Tecnico = Tecnico;
-        this.cantidadTecnicos = cantidadTecnicos;
-    }
-            
-    public String getNombreDepartamento() {
-        return nombreDepartamento;
-    }
-
-    public void setNombreDepartamento(String nombreDepartamento) {
-        this.nombreDepartamento = nombreDepartamento;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public int getCantidadTecnicos() {
-        return cantidadTecnicos;
-    }
-
-    public void setCantidadTecnicos(int cantidadTecnicos) {
-        this.cantidadTecnicos = cantidadTecnicos;
-    }
     
-    
-    public void asignarTecnico(){
+    public Departamento(String nombre, String descripcion) {
+        this(0, nombre, descripcion, FXCollections.observableArrayList()); 
     }
-    
+
+    public Departamento(int id, String nombre) {
+        this(id, nombre, null, null);
+    }
+        
+
+    public int getId() { 
+        return id.get(); 
+    }
+    public SimpleIntegerProperty idProperty() { 
+        return id; 
+    }
+
+    public String getNombre() { 
+        return nombre.get(); 
+    }
+    public SimpleStringProperty nombreProperty() { 
+        return nombre; 
+    }
+
+    public String getDescripcion() { 
+        return descripcion.get(); 
+    }
+    public SimpleStringProperty descripcionProperty() { 
+        return descripcion; 
+    }
+
+
+    public ObservableList<String> getTecnicosAsignados() {
+        return tecnicosAsignados;
+    }
+
+
+    public String getTecnicosAsignadosString() {
+        return String.join(", ", tecnicosAsignados);
+    }
+    public SimpleStringProperty tecnicosAsignadosStringProperty() {
+        return new SimpleStringProperty(getTecnicosAsignadosString());
+    }
+
+    @Override
+    public String toString() {
+        return getNombre(); 
+    }
 }

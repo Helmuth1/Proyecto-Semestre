@@ -9,30 +9,40 @@ package sistema_tickets_servicio;
  * @author helmu
  */
 public abstract class Persona {
-    private String nombre;
-    private String correo;
+    int id;
+    private String nombrecompleto;
+    private String correoelectronico;
     private String contrasena;
     
-    public Persona(String nombre, String correo, String contrasena){
-    this.nombre = nombre;
-    this.correo = correo;
+    public Persona(int id, String nombrecompleto, String correoelectronico, String contrasena){
+    this.id = id;
+    this.nombrecompleto = nombrecompleto;
+    this.correoelectronico = correoelectronico;
     this.contrasena = contrasena;
     }
     
-    public String getNombre(){
-        return nombre;
+    public int getId(){
+        return id;
     }
     
-    public void setNombre(String nombre){
-        this.nombre = nombre;
+    public void setId(int id){
+        this.id = id;
     }
     
-    public String getCorreo(){
-        return correo;
+    public String getNombrecompleto(){
+        return nombrecompleto;
     }
     
-    public void setCorreo(String correo){
-        this.correo = correo;
+    public void setNombrecompleto(String nombrecompleto){
+        this.nombrecompleto = nombrecompleto;
+    }
+    
+    public String getCorreoelectronico(){
+        return correoelectronico;
+    }
+    
+    public void setCorreoelectronico(String correoelectronico){
+        this.correoelectronico = correoelectronico;
     }
     
     public String getContrasena(){
@@ -45,8 +55,8 @@ public abstract class Persona {
     
     public void mostrarDatos() {
         System.out.println("Datos - " +
-                           " nombre: " + nombre +
-                           " correo: " + correo +
+                           " nombre: " + nombrecompleto +
+                           " correo: " + correoelectronico +
                            " contrasena: " + contrasena);
     }
 }
