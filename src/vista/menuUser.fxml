@@ -5,25 +5,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="369.0" prefWidth="520.0" style="-fx-background-color: pink;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+<AnchorPane id="AnchorPane" prefHeight="369.0" prefWidth="520.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.MenuUserControlador">
    <children>
-      <Button layoutX="207.0" layoutY="109.0" mnemonicParsing="false" text="Crear Ticket">
+      <Button fx:id="btnCrear" layoutX="207.0" layoutY="109.0" mnemonicParsing="false" onAction="#crearTicket" text="Crear Ticket">
          <font>
             <Font name="Broadway" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="173.0" layoutY="163.0" mnemonicParsing="false" text="Lista Tickets Pendientes">
+      <Button fx:id="btnLista" layoutX="173.0" layoutY="163.0" mnemonicParsing="false" onAction="#listaTickets" text="Lista Tickets Pendientes">
          <font>
             <Font name="Broadway" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="403.0" layoutY="316.0" mnemonicParsing="false" text="Regresar">
+      <Button fx:id="btnRegresar" layoutX="403.0" layoutY="316.0" mnemonicParsing="false" onAction="#regresarMenu" text="Regresar">
          <font>
             <Font name="Broadway" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="205.0" layoutY="216.0" mnemonicParsing="false" text="Agregar Nota">
+      <Button fx:id="btnAgregar" layoutX="205.0" layoutY="216.0" mnemonicParsing="false" onAction="#agregarNota" text="Agregar Nota">
          <font>
             <Font name="Broadway" size="12.0" />
          </font>

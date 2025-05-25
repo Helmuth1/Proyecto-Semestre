@@ -99,13 +99,20 @@ public class LoginControlador {
                         rs.getBoolean("activo")
                     );
                     
-                    if (rol.equalsIgnoreCase("Administrador")) {
-                         mostrarMenuAdmin(event);
-                    } else if (rol.equalsIgnoreCase("Técnico")) {
-                        mostrarAlerta("Acceso Denegado", "Los técnicos aún no tienen un menú específico.");
-                    } else { 
-                         mostrarAlerta("Acceso Denegado", "Los usuarios normales aún no tienen un menú específico.");
-                    }
+                switch (rol.toLowerCase()) {
+                case "administrador":
+                mostrarMenuAdmin(event);
+                break;
+                case "técnico":
+                case "tecnico":
+                mostrarMenuTecnico(event);
+                break;
+                case "usuario":
+                mostrarMenuUsuario(event);
+                break;
+                default:
+        mostrarAlerta("Rol desconocido", "Tu rol no está registrado correctamente. Contacta al administrador.");
+}
                 } else {
                     mostrarAlerta("Inicio de sesión fallido", "Tu cuenta está inactiva. Contacta al administrador.");
                 }
@@ -126,6 +133,34 @@ public class LoginControlador {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         currentStage.setScene(crearCuentaScene);
         currentStage.show();
+    }
+
+    @FXML
+    private void mostrarMenuTecnico(ActionEvent event){
+        try {
+        Parent root = FXMLLoader.load(getClass().getResource("/vista/menuTecnico.fxml")); 
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        } catch (IOException ex) {
+        Logger.getLogger(LoginControlador.class.getName()).log(Level.SEVERE, "Error al cargar menuTecnico.fxml", ex);
+        mostrarAlerta("Error al cargar la ventana", "No se pudo cargar el menú del técnico.");
+        }
+    }
+    
+    @FXML
+    private void mostrarMenuUsuario(ActionEvent event){
+        try {
+        Parent root = FXMLLoader.load(getClass().getResource("/vista/menuUser.fxml")); 
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        } catch (IOException ex) {
+        Logger.getLogger(LoginControlador.class.getName()).log(Level.SEVERE, "Error al cargar menuUsuario.fxml", ex);
+        mostrarAlerta("Error al cargar la ventana", "No se pudo cargar el menú del usuario.");
+        }
     }
 
     @FXML
