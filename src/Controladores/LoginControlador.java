@@ -25,6 +25,9 @@ import javafx.scene.control.TextField;
 import sistema_tickets_servicio.ConexionBD;
 import java.sql.DriverManager;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import sistema_tickets_servicio.Usuarios;
 
 /**
@@ -40,6 +43,12 @@ public class LoginControlador {
     private PasswordField txtContrasena;
     
     @FXML
+    private ImageView imgLogoEmpresa;
+
+    @FXML
+    private Label lblNombreEmpresa;
+    
+    @FXML
     private Button btnIniciarSesion;
     
     @FXML
@@ -53,6 +62,11 @@ public class LoginControlador {
 
     @FXML
     public void initialize() {
+        lblNombreEmpresa.setText("Servicio de Tickets");
+        
+        Image logo = new Image("/imagenes/tickets.png"); 
+        imgLogoEmpresa.setImage(logo);
+        
         
     }
    

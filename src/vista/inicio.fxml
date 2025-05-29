@@ -5,45 +5,56 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.LoginControlador">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="796.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.LoginControlador">
    <children>
-      <Label layoutX="235.0" layoutY="47.0" text="Servicio de Tickets">
+      <Label layoutX="421.0" layoutY="141.0" text="Usuario:">
          <font>
-            <Font name="Century Gothic Bold" size="16.0" />
+            <Font name="Broadway" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="144.0" layoutY="140.0" text="Usuario:">
+      <Label layoutX="396.0" layoutY="193.0" text="Contraseña:">
          <font>
-            <Font name="Century Gothic Bold" size="12.0" />
+            <Font name="Broadway" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="119.0" layoutY="192.0" text="Contraseña:">
+      <TextField fx:id="txtNombreUsuario" alignment="CENTER_RIGHT" layoutX="486.0" layoutY="135.0" prefHeight="26.0" prefWidth="214.0" />
+      <Label layoutX="476.0" layoutY="233.0" text="¿No tienes cuenta?">
          <font>
-            <Font name="Century Gothic Bold" size="12.0" />
+            <Font name="Broadway" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txtNombreUsuario" alignment="CENTER_RIGHT" layoutX="200.0" layoutY="135.0" prefHeight="26.0" prefWidth="214.0" />
-      <Label layoutX="191.0" layoutY="233.0" text="¿No tienes cuenta?">
+      <Button fx:id="crearCuentabt" layoutX="589.0" layoutY="227.0" mnemonicParsing="false" onAction="#mostrarCrearCuenta" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: transparent;" text="Crear Cuenta" textFill="#3429ae" underline="true">
          <font>
-            <Font name="Century Gothic Bold" size="12.0" />
-         </font>
-      </Label>
-      <Button fx:id="crearCuentabt" layoutX="299.0" layoutY="227.0" mnemonicParsing="false" onAction="#mostrarCrearCuenta" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: transparent;" text="Crear Cuenta" textFill="#3429ae" underline="true">
-         <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="Broadway" size="12.0" />
          </font>
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Button>
-      <Button fx:id="iniciarSesionbt" layoutX="257.0" layoutY="290.0" mnemonicParsing="false" onAction="#iniciarSesion" text="Iniciar Sesion">
+      <Button fx:id="iniciarSesionbt" layoutX="537.0" layoutY="290.0" mnemonicParsing="false" onAction="#iniciarSesion" text="Iniciar Sesion">
          <font>
-            <Font name="Century Gothic Bold" size="12.0" />
+            <Font name="Broadway" size="12.0" />
          </font>
       </Button>
-      <PasswordField fx:id="txtContrasena" alignment="CENTER_RIGHT" layoutX="200.0" layoutY="187.0" prefHeight="26.0" prefWidth="214.0" />
+      <PasswordField fx:id="txtContrasena" alignment="CENTER_RIGHT" layoutX="486.0" layoutY="187.0" prefHeight="26.0" prefWidth="214.0" />
+      <AnchorPane prefHeight="400.0" prefWidth="372.0" style="-fx-background-color: pink;">
+         <children>
+            <Label fx:id="lblNombreEmpresa" layoutX="96.0" layoutY="278.0" text="Servicio de Tickets">
+               <font>
+                  <Font name="Broadway" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imgLogoEmpresa" fitHeight="150.0" fitWidth="200.0" layoutX="96.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="519.0" layoutY="50.0" text="Inicio de sesion">
+         <font>
+            <Font name="Broadway" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

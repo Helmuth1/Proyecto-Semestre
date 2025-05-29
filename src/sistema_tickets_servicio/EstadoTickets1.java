@@ -4,16 +4,12 @@
  */
 package sistema_tickets_servicio;
 
-import Controladores.LoginControlador; // Para obtener el ID del usuario logueado
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import sistema_tickets_servicio.ConexionBD;
 
 /**
  *
